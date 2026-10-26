@@ -1,5 +1,4 @@
 import { soldCards } from "../../data/site";
-import { ArrowRightIcon } from "../Icons";
 
 export function Sold() {
   return (
@@ -15,7 +14,7 @@ export function Sold() {
             </h2>
           </div>
           <p
-            className="section-lede"
+            className="section-lede section-lede--editorial"
             data-reveal
             style={{ transitionDelay: "80ms" }}
           >
@@ -48,14 +47,6 @@ export function Sold() {
               </div>
             </article>
           ))}
-        </div>
-
-        <div className="sold__cta" data-reveal>
-          <p>Ready to make your next move?</p>
-          <a className="btn btn--dark" href="#contact">
-            Start a conversation
-            <ArrowRightIcon />
-          </a>
         </div>
       </div>
     </section>

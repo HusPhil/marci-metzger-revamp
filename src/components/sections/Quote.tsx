@@ -1,0 +1,16 @@
+export function Quote() {
+  return (
+    <section className="quote" aria-label="A note from Marci">
+      <div className="container quote__inner" data-reveal>
+        <span className="quote__mark" aria-hidden="true">
+          “
+        </span>
+        <blockquote>
+          We live, work, and play in this community. Happy to help you find where
+          to put your hard-earned dollars.
+        </blockquote>
+        <p className="quote__cite">Marci Metzger · The Ridge Realty Group</p>
+      </div>
+    </section>
+  )
+}
