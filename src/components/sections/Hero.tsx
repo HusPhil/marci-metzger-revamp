@@ -1,9 +1,21 @@
-import { phoneDisplay, phoneHref, stats } from '../../data/site'
-import { ArrowDownIcon, ArrowRightIcon, PhoneIcon } from '../Icons'
+import { phoneDisplay, phoneHref, stats } from "../../data/site";
+import { ArrowDownIcon, ArrowRightIcon, PhoneIcon } from "../Icons";
 
-export function Hero() {
+type HeroVariant = "default" | "glass";
+
+type HeroProps = {
+  variant?: HeroVariant;
+  label?: string;
+  id?: string;
+};
+
+export function Hero({ variant = "default", label, id }: HeroProps) {
+  const sectionId = id ?? (variant === "default" ? "top" : undefined);
+  const headingId = `hero-title${variant === "default" ? "" : `-${variant}`}`;
+  const className = variant === "default" ? "hero" : `hero hero--${variant}`;
+
   return (
-    <section className="hero" id="top" aria-labelledby="hero-title">
+    <section className={className} id={sectionId} aria-labelledby={headingId}>
       <div className="hero__media">
         <img
           src="/images/hero-mountain-pond.jpg"
@@ -15,33 +27,35 @@ export function Hero() {
       </div>
 
       <div className="hero__inner container">
-        <div className="hero__intro">
-          <p className="eyebrow eyebrow--light">
-            Marci Metzger · The Ridge Realty Group
-          </p>
-          <h1 id="hero-title">
-            Pahrump
-            <em>Realtor</em>
-          </h1>
-        </div>
+        <div className="hero__content">
+          <div className="hero__intro">
+            <p className="eyebrow eyebrow--light">
+              Marci Metzger · The Ridge Realty Group
+            </p>
+            <h1 id={headingId}>
+              Pahrump
+              <em>Realtor</em>
+            </h1>
+          </div>
 
-        <div className="hero__detail">
-          <p className="hero__detail-label">
-            Serving Pahrump &amp; Southern Nevada
-          </p>
-          <p className="hero__lede">
-            Over two decades in real estate. Licensed Broker in Seattle, now
-            serving Southern Nevada as Pahrump's top real estate agent.
-          </p>
-          <div className="hero__actions">
-            <a className="btn btn--solid" href={phoneHref}>
-              <PhoneIcon />
-              Call {phoneDisplay}
-            </a>
-            <a className="btn btn--ghost" href="#listings">
-              Find your dream home
-              <ArrowRightIcon />
-            </a>
+          <div className="hero__detail">
+            <p className="hero__detail-label">
+              Serving Pahrump &amp; Southern Nevada
+            </p>
+            <p className="hero__lede">
+              Over two decades in real estate. Licensed Broker in Seattle, now
+              serving Southern Nevada as Pahrump's top real estate agent.
+            </p>
+            <div className="hero__actions">
+              <a className="btn btn--solid" href={phoneHref}>
+                <PhoneIcon />
+                Call {phoneDisplay}
+              </a>
+              <a className="btn btn--ghost" href="#listings">
+                Find your dream home
+                <ArrowRightIcon />
+              </a>
+            </div>
           </div>
         </div>
 
@@ -52,12 +66,14 @@ export function Hero() {
               <span className="hero__stat-label">{stat.label}</span>
             </div>
           ))}
-          <a className="hero__scroll" href="#about">
-            <span>Discover</span>
-            <ArrowDownIcon />
-          </a>
         </div>
       </div>
+
+      {label ? (
+        <span className="hero__variant" aria-hidden="true">
+          {label}
+        </span>
+      ) : null}
     </section>
-  )
+  );
 }
