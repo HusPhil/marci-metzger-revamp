@@ -4,6 +4,8 @@ import { ArrowUpRightIcon } from '../Icons'
 export function About() {
   return (
     <section className="section about" id="about" aria-labelledby="about-title">
+      <div className="about__glass" aria-hidden="true" />
+
       <div className="container about__grid">
         <div className="about__media" data-reveal>
           <div className="about__frame">
