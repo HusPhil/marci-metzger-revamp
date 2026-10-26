@@ -1,17 +1,17 @@
-import { useState } from 'react'
-import type { FormEvent } from 'react'
-import { phoneDisplay } from '../../data/site'
-import { ArrowRightIcon } from '../Icons'
+import { useState } from "react";
+import type { FormEvent } from "react";
+import { phoneDisplay } from "../../data/site";
+import { ArrowRightIcon } from "../Icons";
 
 export function Listings() {
-  const [searchNote, setSearchNote] = useState('')
+  const [searchNote, setSearchNote] = useState("");
 
   const handleSearch = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault()
+    event.preventDefault();
     setSearchNote(
       `For live MLS results and private showings, call Marci at ${phoneDisplay} or send a message below.`,
-    )
-  }
+    );
+  };
 
   return (
     <section
@@ -30,10 +30,10 @@ export function Listings() {
           <p
             className="section-lede"
             data-reveal
-            style={{ transitionDelay: '80ms' }}
+            style={{ transitionDelay: "80ms" }}
           >
-            Tell us what you're looking for. We'll help you find the right fit in
-            Pahrump and beyond.
+            Tell us what you're looking for. We'll help you find the right fit
+            in Pahrump and beyond.
           </p>
         </div>
 
@@ -107,7 +107,7 @@ export function Listings() {
               <input
                 id="min-price"
                 name="minPrice"
-                type="text"
+                type="number"
                 inputMode="decimal"
                 placeholder="No minimum"
                 autoComplete="off"
@@ -119,7 +119,7 @@ export function Listings() {
               <input
                 id="max-price"
                 name="maxPrice"
-                type="text"
+                type="number"
                 inputMode="decimal"
                 placeholder="No maximum"
                 autoComplete="off"
@@ -127,24 +127,24 @@ export function Listings() {
             </div>
 
             <div className="search__actions">
-              <p>
-                Live MLS search by request. Call or message Marci for current
-                availability.
-              </p>
+              {!searchNote ? (
+                <p>
+                  Live MLS search by request. Call or message Marci for current
+                  availability.
+                </p>
+              ) : (
+                <p className="search__note" role="status">
+                  {searchNote}
+                </p>
+              )}
               <button className="btn btn--solid" type="submit">
                 Search now
                 <ArrowRightIcon />
               </button>
             </div>
           </form>
-
-          {searchNote && (
-            <p className="search__note" role="status">
-              {searchNote}
-            </p>
-          )}
         </div>
       </div>
     </section>
-  )
+  );
 }
