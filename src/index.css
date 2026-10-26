@@ -13,13 +13,14 @@
   --navy: #16323b;
   --navy-2: #0f242b;
 
-  --serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
-  --sans: 'Jost', 'Segoe UI', system-ui, sans-serif;
+  --serif: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --sans: "Jost", "Segoe UI", system-ui, sans-serif;
 
   --container: 1240px;
   --gutter: clamp(1.25rem, 4vw, 4.5rem);
   --section-space: clamp(5rem, 10vw, 9rem);
   --header-height: 88px;
+  --scroll-offset: 3rem;
 
   --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
   --shadow: 0 30px 80px -40px rgba(27, 26, 23, 0.45);
@@ -44,7 +45,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: calc(var(--header-height) + 24px);
+  scroll-padding-top: var(--scroll-offset);
 }
 
 body {

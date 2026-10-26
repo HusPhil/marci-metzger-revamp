@@ -741,8 +741,8 @@
   position: relative;
   display: flex;
   align-items: center;
-  min-height: 100vh;
-  min-height: 100svh;
+  height: 100vh;
+  height: 100svh;
   background:
     radial-gradient(
       ellipse 70% 55% at 12% 8%,
@@ -1670,6 +1670,8 @@
 
 .services {
   background: var(--paper);
+  padding-top: calc(var(--header-height) * 0.75);
+  padding-bottom: calc(var(--header-height) * 0.75);
 }
 
 .services__head {
@@ -1677,7 +1679,7 @@
   grid-template-columns: 1.1fr 0.9fr;
   gap: clamp(2rem, 5vw, 5rem);
   align-items: end;
-  margin-bottom: clamp(2.5rem, 5vw, 4.5rem);
+  margin-bottom: 2.5rem;
 }
 
 .services__grid {
