@@ -1557,9 +1557,52 @@
 }
 
 .service-card h3 {
+  position: relative;
+  isolation: isolate;
+  width: fit-content;
+  max-width: 100%;
   margin-top: 0.45rem;
   font-size: clamp(1.7rem, 2.4vw, 2.25rem);
   letter-spacing: -0.025em;
+}
+
+.service-card h3::before {
+  content: "";
+  position: absolute;
+  inset: -0.22rem -0.42rem;
+  z-index: -1;
+  border: 1px solid rgba(255, 255, 255, 0.66);
+  border-radius: 0.4rem;
+  background:
+    radial-gradient(
+      circle at 24% 18%,
+      rgba(255, 255, 255, 0.82),
+      transparent 46%
+    ),
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.42),
+      rgba(255, 255, 255, 0.14) 56%,
+      rgba(194, 164, 126, 0.08)
+    );
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    inset 0 -1px 0 rgba(201, 190, 169, 0.16),
+    0 10px 22px -24px rgba(27, 26, 23, 0.24);
+  transition:
+    border-color 0.4s var(--ease),
+    box-shadow 0.4s var(--ease);
+  pointer-events: none;
+  -webkit-backdrop-filter: blur(10px) saturate(112%);
+  backdrop-filter: blur(10px) saturate(112%);
+}
+
+.service-card:hover h3::before {
+  border-color: rgba(255, 255, 255, 0.86);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.96),
+    inset 0 -1px 0 rgba(201, 190, 169, 0.18),
+    0 14px 28px -24px rgba(27, 26, 23, 0.3);
 }
 
 .service-card p {
