@@ -13,13 +13,14 @@ export function Services() {
           <div className="section-head" data-reveal>
             <p className="eyebrow">Our services</p>
             <h2 className="section-title" id="services-title">
-              Real estate <em>done right.</em>
+              Real estate <br />
+              <em>done right.</em>
             </h2>
           </div>
           <p
             className="section-lede section-lede--editorial"
             data-reveal
-            style={{ transitionDelay: '80ms' }}
+            style={{ transitionDelay: "80ms" }}
           >
             Whether you're buying your first home or adding to an investment
             portfolio, you'll have an experienced advocate in your corner.

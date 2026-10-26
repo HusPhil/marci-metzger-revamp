@@ -1142,7 +1142,9 @@
   }
 
   .sold .section-title,
-  .search .section-title {
+  .search .section-title,
+  .services .section-title,
+  .gallery .section-title {
     font-size: clamp(2.2rem, 4.2vw, 3.2rem);
   }
 
