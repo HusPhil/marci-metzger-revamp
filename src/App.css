@@ -903,12 +903,30 @@
 
 .about__meta li {
   padding: 0.42rem 0.75rem;
-  border: 1px solid var(--line-strong);
+  border: 1px solid rgba(201, 190, 169, 0.62);
   border-radius: 999px;
+  background:
+    radial-gradient(
+      circle at 28% 18%,
+      rgba(255, 255, 255, 0.92),
+      transparent 42%
+    ),
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.56),
+      rgba(255, 255, 255, 0.16) 52%,
+      rgba(194, 164, 126, 0.12)
+    );
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.95),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.28),
+    0 10px 24px -20px rgba(27, 26, 23, 0.32);
   color: var(--muted);
   font-size: 0.6rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
+  -webkit-backdrop-filter: blur(14px) saturate(125%);
+  backdrop-filter: blur(14px) saturate(125%);
 }
 
 /* Get it sold */
