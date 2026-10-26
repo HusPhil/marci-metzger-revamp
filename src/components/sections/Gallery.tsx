@@ -22,12 +22,12 @@ export function Gallery() {
               </h2>
             </div>
             <p
-              className="section-lede section-lede--light"
+              className="section-lede section-lede--editorial section-lede--light"
               data-reveal
               style={{ transitionDelay: '80ms' }}
             >
-              A look at homes we've helped buy and sell across Pahrump and
-              Southern Nevada.
+              From first showing to final keys — a closer look at the homes
+              we've helped buy and sell across Pahrump and Southern Nevada.
             </p>
           </div>
 
