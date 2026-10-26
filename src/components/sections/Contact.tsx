@@ -147,16 +147,22 @@ export function Contact() {
               ))}
             </div>
           </div>
+        </div>
+      </div>
 
-          <div className="contact__map">
-            <iframe
-              title="Map to the Marci Metzger office in Pahrump, Nevada"
-              src={mapEmbedUrl}
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
+      <div className="container contact__map-band">
+        <div className="contact__map contact__map--visit">
+          <iframe
+            title="Map to the Marci Metzger office in Pahrump, Nevada"
+            src={mapEmbedUrl}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
+          <div className="contact__map-card">
+            <span>Pahrump office</span>
+            <p>3190 HW-160, Suite F</p>
             <a
-              className="contact__directions"
+              className="contact__directions contact__directions--card"
               href={directionsUrl}
               target="_blank"
               rel="noreferrer"
