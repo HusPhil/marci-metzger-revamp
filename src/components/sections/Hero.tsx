@@ -1,5 +1,5 @@
 import { phoneDisplay, phoneHref, stats } from "../../data/site";
-import { ArrowDownIcon, ArrowRightIcon, PhoneIcon } from "../Icons";
+import { ArrowRightIcon, PhoneIcon } from "../Icons";
 
 type HeroVariant = "default" | "glass";
 
