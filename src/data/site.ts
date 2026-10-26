@@ -27,6 +27,42 @@ export const socials = [
   { label: 'Yelp', href: 'https://www.yelp.com/biz/xr3yQN_m2SgO0R_7S6p62w' },
 ]
 
+export type Credential = {
+  src: string
+  alt: string
+  label: string
+  note: string
+  width: number
+  height: number
+}
+
+export const credentials: Credential[] = [
+  {
+    src: '/images/badge-realtor.jpg',
+    alt: 'REALTOR®',
+    label: 'REALTOR®',
+    note: 'Professional membership',
+    width: 335,
+    height: 300,
+  },
+  {
+    src: '/images/badge-equal-housing.png',
+    alt: 'Equal Housing Opportunity',
+    label: 'Equal Housing Opportunity',
+    note: 'Fair housing commitment',
+    width: 299,
+    height: 300,
+  },
+  {
+    src: '/images/badge-chamber.jpg',
+    alt: 'Pahrump Chamber of Commerce',
+    label: 'Pahrump Chamber of Commerce',
+    note: 'Local chamber member',
+    width: 200,
+    height: 200,
+  },
+]
+
 export type Stat = {
   value: string
   label: string

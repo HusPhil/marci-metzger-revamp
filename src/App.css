@@ -1492,9 +1492,9 @@
 .quote blockquote {
   color: var(--ivory);
   font-family: var(--serif);
-  font-size: clamp(2rem, 4.5vw, 4rem);
+  font-size: clamp(1.8rem, 3.6vw, 3.25rem);
   letter-spacing: -0.02em;
-  line-height: 1.05;
+  line-height: 1.08;
   text-wrap: balance;
 }
 
@@ -1503,6 +1503,153 @@
   color: rgba(247, 243, 236, 0.55);
   font-size: 0.64rem;
   letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.quote__credentials {
+  margin-top: clamp(2.75rem, 5vw, 4.25rem);
+  padding-top: clamp(1.5rem, 3vw, 2.25rem);
+  border-top: 1px solid rgba(194, 164, 126, 0.26);
+}
+
+.quote__credentials-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.9rem;
+  color: rgba(247, 243, 236, 0.52);
+  font-size: 0.56rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.quote__credentials-title::before,
+.quote__credentials-title::after {
+  content: "";
+  width: clamp(1.25rem, 4vw, 3rem);
+  height: 1px;
+  background: rgba(194, 164, 126, 0.38);
+}
+
+.quote__badges {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(0.7rem, 1.5vw, 1rem);
+  margin-top: 1.35rem;
+  padding: 0;
+  list-style: none;
+}
+
+.quote__badge {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.17);
+  border-radius: 0.55rem;
+  background:
+    radial-gradient(
+      circle at 22% 0%,
+      rgba(255, 255, 255, 0.2),
+      transparent 46%
+    ),
+    radial-gradient(
+      circle at 100% 100%,
+      rgba(194, 164, 126, 0.14),
+      transparent 48%
+    ),
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.115),
+      rgba(255, 255, 255, 0.03) 55%,
+      rgba(255, 255, 255, 0.07)
+    );
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.3),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.14),
+    0 22px 48px -34px rgba(0, 0, 0, 0.8);
+  -webkit-backdrop-filter: blur(18px) saturate(135%);
+  backdrop-filter: blur(18px) saturate(135%);
+}
+
+.quote__badge::before {
+  content: "";
+  position: absolute;
+  inset: 0 16% auto;
+  z-index: 2;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.82),
+    transparent
+  );
+  pointer-events: none;
+}
+
+.quote__badge::after {
+  content: "";
+  position: absolute;
+  top: -45%;
+  right: -12%;
+  z-index: 0;
+  width: 65%;
+  height: 85%;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.09);
+  filter: blur(18px);
+  pointer-events: none;
+}
+
+.quote__badge figure {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  justify-items: center;
+  align-content: space-between;
+  gap: 0.9rem;
+  height: 100%;
+  padding: 1.2rem 1rem 1.05rem;
+}
+
+.quote__badge-seal {
+  display: grid;
+  place-items: center;
+  width: 88px;
+  height: 88px;
+  border: 1px solid rgba(255, 255, 255, 0.86);
+  border-radius: 50%;
+  background: var(--white);
+  box-shadow:
+    inset 0 1px 0 #ffffff,
+    inset 0 -8px 18px rgba(138, 94, 52, 0.08),
+    0 14px 28px -18px rgba(0, 0, 0, 0.9);
+}
+
+.quote__badge img {
+  width: auto;
+  height: 56px;
+  max-width: 64%;
+  object-fit: contain;
+}
+
+.quote__badge figcaption {
+  display: grid;
+  gap: 0.28rem;
+  text-align: center;
+}
+
+.quote__badge-label {
+  color: rgba(247, 243, 236, 0.96);
+  font-family: var(--serif);
+  font-size: 1rem;
+  line-height: 1.2;
+}
+
+.quote__badge-note {
+  color: var(--brass-soft);
+  font-size: 0.5rem;
+  letter-spacing: 0.17em;
+  line-height: 1.4;
   text-transform: uppercase;
 }
 
@@ -2534,6 +2681,47 @@
 
   .quote__mark {
     font-size: 4.5rem;
+  }
+
+  .quote__badges {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    max-width: 30rem;
+    margin-inline: auto;
+  }
+
+  .quote__badge figure {
+    grid-template-columns: 58px minmax(0, 1fr);
+    align-items: center;
+    justify-items: start;
+    gap: 0.85rem;
+    padding: 0.65rem 0.85rem;
+  }
+
+  .quote__badge-seal {
+    width: 58px;
+    height: 58px;
+  }
+
+  .quote__badge img {
+    height: 38px;
+    max-width: 68%;
+    justify-self: center;
+  }
+
+  .quote__badge figcaption {
+    justify-items: start;
+    gap: 0.2rem;
+    text-align: left;
+  }
+
+  .quote__badge-label {
+    font-size: 0.92rem;
+  }
+
+  .quote__badge-note {
+    font-size: 0.48rem;
+    letter-spacing: 0.14em;
   }
 }
 
